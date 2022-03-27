@@ -1,5 +1,5 @@
 from django.urls import path
-from kucoin import views
+from app_kucoin import views
 
 
 

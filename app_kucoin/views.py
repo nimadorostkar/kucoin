@@ -11,17 +11,17 @@ from kucoin.client import Client
 
 #------------------------------------------------------------------------------
 def index(request):
-    return render(request, 'index.html', context)
+    return render(request, 'index.html')
 
 
 
 
 #------------------------------------------------------------------------------
 def client(request):
-
-    api_key = '<api_key>'
-    api_secret = '<api_secret>'
-    api_passphrase = '<api_passphrase>'
+    #https://python-kucoin.readthedocs.io/en/latest/
+    api_key = '62402a681634ba000102877f'
+    api_secret = 'bb2ce4a8-ff4a-4859-965d-547e0fa43068'
+    api_passphrase = '12345678test'
 
     client = Client(api_key, api_secret, api_passphrase)
 
@@ -41,10 +41,10 @@ def client(request):
     markets = client.get_markets()
 
     # place a market buy order
-    order = client.create_market_order('NEO', Client.SIDE_BUY, size=20)
+    #order = client.create_market_order('NEO', Client.SIDE_BUY, size=20)
 
     # get list of active orders
-    orders = client.get_active_orders('KCS-BTC')
+    #orders = client.get_active_orders('KCS-BTC')
 
 
     context = {'client':client,
@@ -52,10 +52,10 @@ def client(request):
         'depth':depth,
         'klines':klines,
         'markets':markets,
-        'order':order,
-        'orders':orders
+        #'order':order,
+        #'orders':orders
     }
-    
+
     return render(request, 'client.html', context)
 
 
