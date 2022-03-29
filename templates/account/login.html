@@ -5,81 +5,111 @@
 <head>
   <meta charset="UTF-8">
   <title> ورود کاربر </title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
-  <link rel="stylesheet" href="{% static 'login_style.css' %}">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="{% static 'account/login_style.css' %}">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
+<div class="container" id="container">
+        <div class="form-container sign-up-container">
 
-<br><br><br>
+            <form action="#" id="contact-form" class="main-form needs-validation" role="form" novalidate>
+                <h3>Create Account</h3>
+                <div class="form-group">
+                    <label>
+                        <input type="text" id="form_user" class="my_form-control" required>
+                        <small class="my_place">Username</small>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </label>
+                </div>
 
-<div class="login-wrap">
+                <div class="form-group">
+                    <label>
+                        <input type="text" id="form_email" class="my_form-control" required>
+                        <small class="my_place">Your email</small>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </label>
+                </div>
 
-	<div class="login-html">
-    <br>
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked>
-    <label for="tab-1" class="tab"> ورود </label>
-		<input id="tab-2" type="radio" name="tab" class="sign-up">
-    <label for="tab-2" class="tab"> ثبت نام </label>
-    <br>
-		<div class="login-form">
+                <div class="form-group">
+                    <label>
+                        <input type="password" id="form_password" class="my_form-control" required>
+                        <small class="my_place">Your password</small>
+                        <div class="invalid-feedback">Please fill out this field.</div>
 
+                    </label>
+                </div>
 
-			<div class="sign-in-htm">
-        <form action="login" method="post">
-  				<div class="group">
-  					<label for="user" class="label">Username</label>
-  					<input id="user" type="text" class="input">
-  				</div>
-  				<div class="group">
-  					<label for="pass" class="label">Password</label>
-  					<input id="pass" type="password" class="input" data-type="password">
-  				</div>
-  				<div class="group">
-  					<input id="check" type="checkbox" class="check" checked>
-  					<label for="check"><span class="icon"></span> Keep me Signed in</label>
-  				</div>
-  				<div class="group">
-  					<input type="submit" class="button" value="Sign In">
-  				</div>
-        </form>
-				<div class="hr"></div>
-				<div class="foot-lnk">
-					<a href="#forgot">Forgot Password?</a>
-				</div>
-			</div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary mt-2 mx-auto" >CREATE ACCOUNT</button>
+                </div>
 
 
-			<div class="sign-up-htm">
-				<div class="group">
-					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Repeat Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Email Address</label>
-					<input id="pass" type="text" class="input">
-				</div>
-				<div class="group">
-					<input type="submit" class="button" value="Sign Up">
-				</div>
-				<div class="hr"></div>
-				<div class="foot-lnk">
-					<label for="tab-1">Already Member?</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
+            </form>
+
+
+
+
+        </div>
+
+        <div class="form-container sign-in-container">
+
+            <form action="#" id="contact-form" class="main-form needs-validation" role="form" novalidate>
+                <h3>Sign In</h3>
+
+
+                <div class="form-group">
+                    <label>
+                        <input type="text" id="form_email" class="my_form-control" required>
+                        <small class="my_place">Your email</small>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="password" id="form_password" class="my_form-control" required>
+                        <small class="my_place">Your password</small>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+
+                    </label>
+                </div>
+
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary mt-2 mx-auto" >SIGN IN</button>
+                </div>
+
+                <div class="form-group mt-2 text-center">
+                    <span class="forgot">Forgot password ?</span>
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                    <button class="ghost" id="signIn">SIGN IN</button>
+
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello World!</h1>
+                    <p>Lorem ipsum dolor sit amet,<br>
+                        sed do eiusmod tempor incididunt.</p>
+                    <button class="ghost" id="signUp">CREATE ACCOUNT</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 <!-- partial -->
+  <script  src="{% static 'account/login_script.js' %}"></script>
 
 </body>
 </html>
