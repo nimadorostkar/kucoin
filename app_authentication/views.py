@@ -3,8 +3,9 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.forms.utils import ErrorList
 from django.http import HttpResponse, HttpResponseRedirect, request
-from .forms import LoginForm, SignUpForm
 from django.contrib import messages
+
+
 
 
 
@@ -18,6 +19,7 @@ def login(request):
         login(request, user)
         return redirect("/")
     return render(request, "account/login.html")
+
 
 
 
