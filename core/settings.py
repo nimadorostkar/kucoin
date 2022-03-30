@@ -94,6 +94,17 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
+
+LOGIN_REDIRECT_URL = "home"   # Route defined in app/urls.py
+LOGOUT_REDIRECT_URL = "login"  # Route defined in app/urls.py
+
+
+
+
+
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 

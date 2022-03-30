@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login as dj_login
 from django.contrib.auth.models import User
 from django.forms.utils import ErrorList
 from django.http import HttpResponse, HttpResponseRedirect, request
@@ -16,7 +16,7 @@ from django.contrib import messages
 def login(request):
     if request.method == "POST":
         user = authenticate( username=request.POST['username'], password=request.POST['password'] )
-        login(request, user)
+        dj_login(request, user)
         return redirect("/")
     return render(request, "account/login.html")
 
@@ -24,12 +24,15 @@ def login(request):
 
 
 
-
-
+#------------------------------------------------------------------------------
+def register(request):
+    if request.method == "POST":
+        pass
+    return render(request, "account/login.html")
 
 
 '''
-#------------------------------------------------------------------------------
+
 def register_user(request):
     msg     = None
     success = False
@@ -54,3 +57,18 @@ def register_user(request):
 
     return render(request, "accounts/register.html", {"form": form, "msg" : msg, "success" : success })
 '''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#End

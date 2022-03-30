@@ -14,35 +14,36 @@
 <div class="container" id="container">
         <div class="form-container sign-up-container">
 
-            <form action="#" id="contact-form" class="main-form needs-validation" role="form" novalidate>
-                <h3>Create Account</h3>
+            <form action="register" id="contact-form" class="main-form needs-validation" role="form" novalidate>
+                <h3> ایجاد حساب کاربری </h3>
+                <br>
                 <div class="form-group">
                     <label>
                         <input type="text" id="form_user" class="my_form-control" required>
-                        <small class="my_place">Username</small>
-                        <div class="invalid-feedback">Please fill out this field.</div>
+                        <small class="my_place"> نام کاربری </small>
+                        <div class="invalid-feedback" dir="rtl">Please fill out this field.</div>
                     </label>
                 </div>
 
                 <div class="form-group">
                     <label>
                         <input type="text" id="form_email" class="my_form-control" required>
-                        <small class="my_place">Your email</small>
-                        <div class="invalid-feedback">Please fill out this field.</div>
+                        <small class="my_place"> ایمیل </small>
+                        <div class="invalid-feedback" dir="rtl"> لطفا این قسمت رو پر کنید. </div>
                     </label>
                 </div>
 
                 <div class="form-group">
                     <label>
                         <input type="password" id="form_password" class="my_form-control" required>
-                        <small class="my_place">Your password</small>
-                        <div class="invalid-feedback">Please fill out this field.</div>
+                        <small class="my_place"> رمزعبور </small>
+                        <div class="invalid-feedback" dir="rtl"> لطفا این قسمت رو پر کنید. </div>
 
                     </label>
                 </div>
 
                 <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary mt-2 mx-auto" >CREATE ACCOUNT</button>
+                    <button type="submit" class="btn btn-primary mt-2 mx-auto" > ایجاد حساب کاربری </button>
                 </div>
 
 
@@ -56,33 +57,33 @@
 
         <div class="form-container sign-in-container">
 
-            <form action="#" id="contact-form" class="main-form needs-validation" role="form" novalidate>
-                <h3>Sign In</h3>
-
+            <form action="{% url 'login' %}"  class="main-form needs-validation" role="form" method="post" novalidate>
+               {% csrf_token %}
+                <h3> ورود </h3> <br>
 
                 <div class="form-group">
                     <label>
-                        <input type="text" id="form_email" class="my_form-control" required>
-                        <small class="my_place">Your email</small>
-                        <div class="invalid-feedback">Please fill out this field.</div>
+                        <input type="text" id="form_email" name="username" class="my_form-control" required>
+                        <small class="my_place" dir="rtl"> نام کاربری </small>
+                        <div class="invalid-feedback" dir="rtl"> لطفا این قسمت رو پر کنید. </div>
                     </label>
                 </div>
 
                 <div class="form-group">
                     <label>
-                        <input type="password" id="form_password" class="my_form-control" required>
-                        <small class="my_place">Your password</small>
-                        <div class="invalid-feedback">Please fill out this field.</div>
+                        <input type="password" id="form_password" name="password" class="my_form-control" required>
+                        <small class="my_place" dir="rtl"> رمزعبور </small>
+                        <div class="invalid-feedback" dir="rtl"> لطفا این قسمت رو پر کنید. </div>
 
                     </label>
                 </div>
 
                 <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary mt-2 mx-auto" >SIGN IN</button>
+                    <button type="submit" class="btn btn-primary mt-2 mx-auto" > ورود </button>
                 </div>
 
                 <div class="form-group mt-2 text-center">
-                    <span class="forgot">Forgot password ?</span>
+                    <span class="forgot" dir="rtl"> رمز عبور را فراموش کرده اید؟ </span>
                 </div>
 
             </form>
@@ -93,16 +94,15 @@
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                    <button class="ghost" id="signIn">SIGN IN</button>
+                    <h1 dir="rtl"> خوش آمدید! </h1>
+                    <p dir="rtl"> با دستیارِ حرفه‌ای و اختصاصی ما ، همه ابزار هایی که نیاز دارید، یکجا در اختیار شماست. </p>
+                    <button class="ghost" id="signIn"> ورود </button>
 
                 </div>
                 <div class="overlay-panel overlay-right">
-                    <h1>Hello World!</h1>
-                    <p>Lorem ipsum dolor sit amet,<br>
-                        sed do eiusmod tempor incididunt.</p>
-                    <button class="ghost" id="signUp">CREATE ACCOUNT</button>
+                    <h1 dir="rtl"> کوکوین </h1>
+                    <p dir="rtl"> با دستیارِ حرفه‌ای و اختصاصی ما ، همه ابزار هایی که نیاز دارید، یکجا در اختیار شماست. </p>
+                    <button class="ghost" id="signUp"> ایجاد حساب کاربری </button>
                 </div>
             </div>
         </div>
