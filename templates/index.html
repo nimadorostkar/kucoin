@@ -43,17 +43,10 @@
 						</div>
 						<div class="menu">
 							<ul class="d-inline-block">
+								<li> <a href="index.html"> صفحه اصلی </a> </li>
 								<li class="mega-menu">
 									<span class="opener plus"></span>
-									<a href="index.html">Home</a>
-									<ul class="transition">
-										<li><a href="index.html">Home One</a></li>
-										<li><a href="index-2.html">Home Two</a></li>
-									</ul>
-								</li>
-								<li class="mega-menu">
-									<span class="opener plus"></span>
-									<a href="about.html">Pages</a>
+									<a href="about.html"> سایر صفحات </a>
 									<ul class="transition">
 										<li><a href="about.html">About</a></li>
 										<li><a href="blog-list.html">Blog</a></li>
@@ -63,9 +56,7 @@
 										<li><a href="404.html">404 Page</a></li>
 									</ul>
 								</li>
-								<li><a href="feature.html">Feature</a></li>
-								<li><a href="roadmap.html">Roadmap</a></li>
-								<li><a href="team.html">Team</a></li>
+								<li><a href="feature.html"> پشتیبانی </a></li>
 							</ul>
 							<div class="signin d-inline-block">
 								{% if user.is_authenticated %}
@@ -134,7 +125,7 @@
 						<div class="feature-box-2">
 							<div class="frontend">
 								<div class="feature-icon-2">
-									<img src="images/feature-1.png" alt="Safe & Secure">
+									<img src="{% static 'images/feature-1.png' %}" alt="Safe & Secure">
 								</div>
 								<div class="feature-content">
 									<h3 class="feature-title-2">Safe & Secure</h3>
@@ -151,7 +142,7 @@
 						<div class="feature-box-2">
 							<div class="frontend">
 								<div class="feature-icon-2">
-									<img src="images/feature-2.png" alt="Early Bonus">
+									<img src="{% static 'images/feature-2.png' %}" alt="Early Bonus">
 								</div>
 								<div class="feature-content">
 									<h3 class="feature-title-2">Early Bonus</h3>
@@ -168,7 +159,7 @@
 						<div class="feature-box-2">
 							<div class="frontend">
 								<div class="feature-icon-2">
-									<img src="images/feature-3.png" alt="Univarsal Access">
+									<img src="{% static 'images/feature-3.png' %}" alt="Univarsal Access">
 								</div>
 								<div class="feature-content">
 									<h3 class="feature-title-2">Univarsal Access</h3>
@@ -185,7 +176,7 @@
 						<div class="feature-box-2">
 							<div class="frontend">
 								<div class="feature-icon-2">
-									<img src="images/feature-4.png" alt="Secure Storage">
+									<img src="{% static 'images/feature-4.png' %}" alt="Secure Storage">
 								</div>
 								<div class="feature-content">
 									<h3 class="feature-title-2">Secure Storage</h3>
@@ -202,7 +193,7 @@
 						<div class="feature-box-2">
 							<div class="frontend">
 								<div class="feature-icon-2">
-									<img src="images/feature-5.png" alt="Low Cost">
+									<img src="{% static 'images/feature-5.png' %}" alt="Low Cost">
 								</div>
 								<div class="feature-content">
 									<h3 class="feature-title-2">Low Cost</h3>
@@ -219,7 +210,7 @@
 						<div class="feature-box-2">
 							<div class="frontend">
 								<div class="feature-icon-2">
-									<img src="images/feature-6.png" alt="Several Profit">
+									<img src="{% static 'images/feature-6.png' %}" alt="Several Profit">
 								</div>
 								<div class="feature-content">
 									<h3 class="feature-title-2">Several Profit</h3>
@@ -330,7 +321,7 @@
 							<div class="team-slide-box">
 								<div class="team-box-2">
 									<div class="team-member-img">
-										<a href="team.html"><img src="images/team-5.jpg" alt="team member"></a>
+										<a href="team.html"><img src="{% static 'images/team-5.jpg' %}" alt="team member"></a>
 									</div>
 									<div class="team-member-name">
 										<a href="team.html">John Doe</a>
@@ -340,7 +331,7 @@
 							<div class="team-slide-box">
 								<div class="team-box-2">
 									<div class="team-member-img">
-										<a href="team.html"><img src="images/team-6.jpg" alt="team member"></a>
+										<a href="team.html"><img src="{% static 'images/team-6.jpg' %}" alt="team member"></a>
 									</div>
 									<div class="team-member-name">
 										<a href="team.html">John Doe</a>
@@ -350,7 +341,7 @@
 							<div class="team-slide-box">
 								<div class="team-box-2">
 									<div class="team-member-img">
-										<a href="team.html"><img src="images/team-7.jpg" alt="team member"></a>
+										<a href="team.html"><img src="{% static 'images/team-7.jpg' %}" alt="team member"></a>
 									</div>
 									<div class="team-member-name">
 										<a href="team.html">John Doe</a>
@@ -360,7 +351,7 @@
 							<div class="team-slide-box">
 								<div class="team-box-2">
 									<div class="team-member-img">
-										<a href="team.html"><img src="images/team-8.jpg" alt="team member"></a>
+										<a href="team.html"><img src="{% static 'images/team-8.jpg' %}" alt="team member"></a>
 									</div>
 									<div class="team-member-name">
 										<a href="team.html">John Doe</a>
@@ -394,7 +385,7 @@
 						        <div data-lcolor="#f85d77">73.2</div>
 						    </div>
 					        <div class="graph-logo">
-					        	<img src="images/graph-logo.png" alt="cryptoz">
+					        	<img src="{% static 'images/graph-logo.png' %}" alt="cryptoz">
 					        </div>
 						</div>
 					</div>
@@ -426,7 +417,7 @@
 				<div class="blog-slider owl-carousel">
 					<div class="blog-box wow fadeInUp">
 						<div class="blog-img mb-15">
-							<a href="blog-detail.html"><img src="images/blog-1.jpg" alt="blog"></a>
+							<a href="blog-detail.html"><img src="{% static 'images/blog-1.jpg' %}" alt="blog"></a>
 						</div>
 						<div class="blog-des-box">
 							<a href="blog-detail.html" class="blog-title">Cryptocash is a clean, modern template clean</a>
@@ -440,7 +431,7 @@
 					</div>
 					<div class="blog-box wow fadeInUp">
 						<div class="blog-img mb-15">
-							<a href="blog-detail.html"><img src="images/blog-2.jpg" alt="blog"></a>
+							<a href="blog-detail.html"><img src="{% static 'images/blog-2.jpg' %}" alt="blog"></a>
 						</div>
 						<div class="blog-des-box">
 							<a href="blog-detail.html" class="blog-title">Cryptocash is a clean, modern template clean</a>
@@ -454,7 +445,7 @@
 					</div>
 					<div class="blog-box wow fadeInUp">
 						<div class="blog-img mb-15">
-							<a href="blog-detail.html"><img src="images/blog-3.jpg" alt="blog"></a>
+							<a href="blog-detail.html"><img src="{% static 'images/blog-3.jpg' %}" alt="blog"></a>
 						</div>
 						<div class="blog-des-box">
 							<a href="blog-detail.html" class="blog-title">Cryptocash is a clean, modern template clean</a>
@@ -468,7 +459,7 @@
 					</div>
 					<div class="blog-box wow fadeInUp">
 						<div class="blog-img mb-15">
-							<a href="blog-detail.html"><img src="images/blog-1.jpg" alt="blog"></a>
+							<a href="blog-detail.html"><img src="{% static 'images/blog-1.jpg' %}" alt="blog"></a>
 						</div>
 						<div class="blog-des-box">
 							<a href="blog-detail.html" class="blog-title">Cryptocash is a clean, modern template clean</a>
@@ -482,7 +473,7 @@
 					</div>
 					<div class="blog-box wow fadeInUp">
 						<div class="blog-img mb-15">
-							<a href="blog-detail.html"><img src="images/blog-2.jpg" alt="blog"></a>
+							<a href="blog-detail.html"><img src="{% static 'images/blog-2.jpg' %}" alt="blog"></a>
 						</div>
 						<div class="blog-des-box">
 							<a href="blog-detail.html" class="blog-title">Cryptocash is a clean, modern template clean</a>
@@ -496,7 +487,7 @@
 					</div>
 					<div class="blog-box wow fadeInUp">
 						<div class="blog-img mb-15">
-							<a href="blog-detail.html"><img src="images/blog-3.jpg" alt="blog"></a>
+							<a href="blog-detail.html"><img src="{% static 'images/blog-3.jpg' %}" alt="blog"></a>
 						</div>
 						<div class="blog-des-box">
 							<a href="blog-detail.html" class="blog-title">Cryptocash is a clean, modern template clean</a>
@@ -510,7 +501,7 @@
 					</div>
 					<div class="blog-box wow fadeInUp">
 						<div class="blog-img mb-15">
-							<a href="blog-detail.html"><img src="images/blog-1.jpg" alt="blog"></a>
+							<a href="blog-detail.html"><img src="{% static 'images/blog-1.jpg' %}" alt="blog"></a>
 						</div>
 						<div class="blog-des-box">
 							<a href="blog-detail.html" class="blog-title">Cryptocash is a clean, modern template clean</a>
@@ -524,7 +515,7 @@
 					</div>
 					<div class="blog-box wow fadeInUp">
 						<div class="blog-img mb-15">
-							<a href="blog-detail.html"><img src="images/blog-2.jpg" alt="blog"></a>
+							<a href="blog-detail.html"><img src="{% static 'images/blog-2.jpg' %}" alt="blog"></a>
 						</div>
 						<div class="blog-des-box">
 							<a href="blog-detail.html" class="blog-title">Cryptocash is a clean, modern template clean</a>
@@ -538,7 +529,7 @@
 					</div>
 					<div class="blog-box wow fadeInUp">
 						<div class="blog-img mb-15">
-							<a href="blog-detail.html"><img src="images/blog-3.jpg" alt="blog"></a>
+							<a href="blog-detail.html"><img src="{% static 'images/blog-3.jpg' %}" alt="blog"></a>
 						</div>
 						<div class="blog-des-box">
 							<a href="blog-detail.html" class="blog-title">Cryptocash is a clean, modern template clean</a>
@@ -559,7 +550,7 @@
 				<div class="row">
 					<div class="col-lg-6 wow fadeInLeft flex-bottom order-r-2">
 						<div class="ico-apps-img w-100 text-center">
-							<img src="images/ico-img-2.png" alt="mobile apps">
+							<img src="{% static 'images/ico-img-2.png' %}" alt="mobile apps">
 						</div>
 					</div>
 					<div class="col-lg-6 wow fadeInRight flex-align order-r-1">
@@ -817,7 +808,7 @@
 					<div class="row">
 						<div class="col-lg-4 col-md-6">
 							<div class="footer-logo pb-25">
-							<a href="index.html"><img src="images/logo.png" alt="Cryptcon"></a>
+							<a href="index.html"><img src="{% static 'images/logo.png' %}" alt="Cryptcon"></a>
 						</div>
 							<div class="footer-icon">
 								<ul>
