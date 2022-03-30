@@ -34,7 +34,7 @@
 				<div class="row flex-align">
 					<div class="col-lg-4 col-md-3 col-8">
 						<div class="logo">
-							<a href="index.html"><img src="images/logo.png" class="transition" alt="Cryptcon"></a>
+							<a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" class="transition" alt="Cryptcon"></a>
 						</div>
 					</div>
 					<div class="col-lg-8 col-md-9 col-4 text-right">
@@ -68,7 +68,11 @@
 								<li><a href="team.html">Team</a></li>
 							</ul>
 							<div class="signin d-inline-block">
-								<a href="#" class="btn btn-2">Sign in</a>
+								{% if user.is_authenticated %}
+							   	<a href="{% url 'dashboard' %}" class="btn btn-2"> داشبورد </a>
+								{% else %}
+								  <a href="{% url 'login' %}" class="btn btn-2"> ورود </a>
+								{% endif %}
 							</div>
 						</div>
 					</div>
@@ -86,35 +90,8 @@
 						</div>
 					</div>
 					<div class="col-md-6 wow fadeInRight">
-						<div class="coin-counter">
-							<label class="coin-start pb-20">Coins Start in</label>
-							<h2 class="coin-head">Discount 475 From Final Price</h2>
-							<ul class="coins-counter-loop">
-								<li>
-									<span id="days">12</span>
-									<label class="coin-day">Days</label>
-								</li>
-								<li>
-									<span id="hours">08</span>
-									<label class="coin-day">hours</label>
-								</li>
-								<li>
-									<span id="minutes">24</span>
-									<label class="coin-day">minutes</label>
-								</li>
-								<li>
-									<span id="seconds">33</span>
-									<label class="coin-day">seconds</label>
-								</li>
-							</ul>
-							<div class="coin-slide-text">
-								<label class="coin-none">0 coins</label>
-								<label class="coin-max">5000 coins</label>
-							</div>
-							<div class="coins-progress">
-						        <span data-progress="45"></span>
-						    </div>
-						    <a href="token-sale.html" class="btn btn-2">Join & Buy Token Now</a>
+						<div class="banner-img">
+							<img src="{% static 'images/bit.png' %}" alt="banner">
 						</div>
 					</div>
 				</div>
@@ -126,7 +103,7 @@
 				<div class="row">
 					<div class="col-md-6 wow fadeInLeft">
 						<div class="about-img">
-							<img src="images/about.jpg" alt="about">
+							<img src="{% static 'images/about.jpg' %}" alt="about">
 						</div>
 					</div>
 					<div class="col-md-6 flex-align wow fadeInRight">

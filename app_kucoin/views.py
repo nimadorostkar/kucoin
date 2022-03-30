@@ -16,6 +16,14 @@ def index(request):
 
 
 
+
+#------------------------------------------------------------------------------
+def dashboard(request):
+    pass
+
+
+
+
 #------------------------------------------------------------------------------
 def client(request):
     #https://python-kucoin.readthedocs.io/en/latest/
