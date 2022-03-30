@@ -19,7 +19,7 @@ def index(request):
 
 #------------------------------------------------------------------------------
 def dashboard(request):
-    pass
+    return render(request, 'dashboard/dashboard.html')
 
 
 
