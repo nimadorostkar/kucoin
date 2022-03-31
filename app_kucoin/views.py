@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django import template
 from django.urls import reverse
 from kucoin.client import Client
-
+from app_authentication.models import Profile
 
 
 
@@ -19,7 +19,8 @@ def index(request):
 
 #------------------------------------------------------------------------------
 def dashboard(request):
-    return render(request, 'dashboard/dashboard.html')
+    profile = get_object_or_404(Profile, user=request.user)
+    return render(request, 'dashboard/dashboard.html', {'profile':profile})
 
 
 
