@@ -5,6 +5,7 @@ from django import template
 from django.urls import reverse
 from kucoin.client import Client
 from app_authentication.models import Profile
+from app_kucoin.models import Exchange
 
 
 
@@ -20,7 +21,18 @@ def index(request):
 #------------------------------------------------------------------------------
 def dashboard(request):
     profile = get_object_or_404(Profile, user=request.user)
-    return render(request, 'dashboard/dashboard.html', {'profile':profile})
+    exchanges = Exchange.objects.filter(user=request.user)
+    context = {'profile':profile,'exchanges':exchanges}
+    return render(request, 'dashboard/dashboard.html', context)
+
+
+
+
+#------------------------------------------------------------------------------
+def exchangeItem(request, id):
+    exchange = get_object_or_404(Exchange, id=id)
+    context = {'exchange':exchange}
+    return render(request, 'dashboard/exItem.html', context)
 
 
 
