@@ -17,6 +17,8 @@ class Exchange(models.Model):
     api_key = models.CharField(max_length=100)
     api_secret = models.CharField(max_length=100)
     api_passphrase = models.CharField(max_length=100)
+    CHOICES = ( ('فعال','فعال '),('غیرفعال','غیرفعال '))
+    status = models.CharField(max_length=30,choices=CHOICES, default='فعال', verbose_name = "وضعیت")
 
     def get_absolute_url(self):
         return reverse('exchange',args=[self.id])
