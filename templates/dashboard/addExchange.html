@@ -134,7 +134,8 @@
                       <!-- Account -->
                       <hr class="my-0" />
                       <div class="card-body">
-                        <form id="formAccountSettings" method="POST" onsubmit="return false">
+                        <form method="POST" action="{% url 'addExchange' %}">
+                          {% csrf_token %}
                           <div class="row">
                             <div class="mb-3 col-md-6">
                               <label class="form-label">API Key</label>
@@ -168,6 +169,8 @@
                             <button type="reset" class="btn btn-outline-secondary">لغو</button>
                           </div>
                         </form>
+                        <br>
+                        <p style="color:green;"> {{exchange}} </p>
                       </div>
                       <!-- /Account -->
                     </div>
