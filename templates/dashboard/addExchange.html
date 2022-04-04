@@ -1,0 +1,247 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html class="light-style layout-menu-fixed" data-theme="theme-default" data-assets-path="{% static 'dashboard' %}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title> add new exchange </title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'dashboard/img/favicon/favicon.ico' %}" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="{% static 'dashboard/vendor/fonts/boxicons.css' %}" />
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{% static 'dashboard/vendor/css/core.css' %}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{% static 'dashboard/vendor/css/theme-default.css' %}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{% static 'dashboard/css/demo.css' %}" />
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{% static 'dashboard/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'dashboard/vendor/libs/apex-charts/apex-charts.css' %}" />
+    <!-- Helpers -->
+    <script src="{% static 'dashboard/vendor/js/helpers.js' %}"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="{% static 'dashboard/js/config.js' %}"></script>
+  </head>
+
+  <body>
+
+
+
+
+  <!-- Layout wrapper -->
+  <div class="layout-wrapper layout-content-navbar">
+    <!-- Navbar -->
+    <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
+       <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+
+           <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" class="transition" alt="Cryptcon"></a>
+
+            <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <li class="nav-item lh-1 me-3">
+                  <h6 class="card-title text-primary" dir="rtl"> {{ profile.user.first_name }} {{ profile.user.last_name }} خوش آمدی 🎉 </h6>
+                </li>
+                <!-- User -->
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <div class="avatar avatar-online">
+                      <img src="{{ profile.photo.url }}" alt class="w-px-40 h-auto rounded-circle" />
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-3">
+                            <div class="avatar avatar-online">
+                              <img src="{{ profile.photo.url }}" alt class="w-px-40 h-auto rounded-circle" />
+                            </div>
+                          </div>
+                          <div class="flex-grow-1">
+                            <span class="fw-semibold d-block" dir="rtl"> {{ profile.user.first_name }} {{ profile.user.last_name }} </span>
+                            <small class="text-muted"> {{ profile.user.username }}  </small>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="bx bx-user me-2"></i>
+                        <span class="align-middle"> پروفایل من </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="bx bx-cog me-2"></i>
+                        <span class="align-middle"> تنظیمات </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <span class="d-flex align-items-center align-middle">
+                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                          <span class="flex-grow-1 align-middle">Billing</span>
+                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="auth-login-basic.html">
+                        <i class="bx bx-power-off me-2"></i>
+                        <span class="align-middle"> خروج </span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--/ User -->
+            </ul>
+        </div>
+    </nav>
+    <!-- / Navbar -->
+  </div>
+
+
+
+
+
+
+
+
+
+            <!-- Content wrapper -->
+            <div class="content-wrapper">
+              <!-- Content -->
+
+              <div class="container-xxl flex-grow-1 container-p-y">
+
+                <div class="row">
+                  <div class="col-md-12">
+
+                    <div class="card mb-4">
+                      <h5 class="card-header" dir="rtl"> اطلاعات صرافی جدید را وارد کنید </h5>
+                      <!-- Account -->
+                      <hr class="my-0" />
+                      <div class="card-body">
+                        <form id="formAccountSettings" method="POST" onsubmit="return false">
+                          <div class="row">
+                            <div class="mb-3 col-md-6">
+                              <label class="form-label">API Key</label>
+                              <input class="form-control" type="text" name="api_key" value="{{ exchange.api_key }}">
+                            </div>
+                            <div class="mb-3 col-md-6">
+                              <label class="form-label">API Secret</label>
+                              <input class="form-control" type="text" name="api_secret" value="{{ exchange.api_secret }}">
+                            </div>
+                            <div class="mb-3 col-md-4">
+                              <label class="form-label">API Passphrase</label>
+                              <input class="form-control" type="text" name="api_passphrase" value="{{ exchange.api_passphrase }}">
+                            </div>
+
+                            <div class="mb-3 col-md-4">
+                              <label class="form-label">Status</label>
+                              <select class="select2 form-select" name="status">
+                                <option value="فعال">فعال</option>
+                                <option value="غیرفعال">غیرفعال</option>
+                              </select>
+                            </div>
+
+                            <div class="mb-3 col-md-4">
+                              <label class="form-label">Name</label>
+                              <input class="form-control" type="text" name="name" value="{{ exchange.name }}">
+                            </div>
+
+                          </div>
+                          <div class="mt-2">
+                            <button type="submit" class="btn btn-primary me-2">ذخیره</button>
+                            <button type="reset" class="btn btn-outline-secondary">لغو</button>
+                          </div>
+                        </form>
+                      </div>
+                      <!-- /Account -->
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!-- / Content -->
+           </div>
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="content-footer footer bg-footer-theme">
+    <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+      <div class="mb-2 mb-md-0">
+        <br><br>
+        © <script> document.write(new Date().getFullYear()); </script> , Developed by <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">NimaDorostkar</a>
+      </div>
+      <div>
+        <br><br>
+        <a href="#" target="_blank" class="footer-link me-4">صفحه اصلی</a>
+        <a href="#" target="_blank" class="footer-link me-4">ارز ها</a>
+        <a href="#" target="_blank" class="footer-link me-4">پشتیبانی</a>
+      </div>
+    </div>
+  </footer>
+  <!-- / Footer -->
+
+
+
+
+
+        <div class="content-backdrop fade"></div>
+      </div>
+      <!-- Content wrapper -->
+    </div>
+    <!-- / Layout page -->
+  </div>
+
+  <!-- Overlay -->
+  <div class="layout-overlay layout-menu-toggle"></div>
+</div>
+<!-- / Layout wrapper -->
+
+
+
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="{% static 'dashboard/vendor/libs/jquery/jquery.js' %}"></script>
+    <script src="{% static 'dashboard/vendor/libs/popper/popper.js' %}"></script>
+    <script src="{% static 'dashboard/vendor/js/bootstrap.js' %}"></script>
+    <script src="{% static 'dashboard/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+    <script src="{% static 'dashboard/vendor/js/menu.js' %}"></script>
+    <!-- endbuild -->
+    <!-- Vendors JS -->
+    <script src="{% static 'dashboard/vendor/libs/apex-charts/apexcharts.js' %}"></script>
+    <!-- Main JS -->
+    <script src="{% static 'dashboard/js/main.js' %}"></script>
+    <!-- Page JS -->
+    <script src="{% static 'dashboard/js/dashboards-analytics.js' %}"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

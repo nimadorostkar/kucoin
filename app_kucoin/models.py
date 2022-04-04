@@ -13,7 +13,6 @@ from django.urls import reverse
 class Exchange(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="کاربر")
     name = models.CharField(max_length=80, verbose_name="نام")
-    description = models.TextField(verbose_name="توضیحات")
     api_key = models.CharField(max_length=100)
     api_secret = models.CharField(max_length=100)
     api_passphrase = models.CharField(max_length=100)

@@ -38,6 +38,32 @@ def exchangeItem(request, id):
 
 
 
+
+#------------------------------------------------------------------------------
+def addExchange(request):
+    profile = get_object_or_404(Profile, user=request.user)
+    if request.method=="POST":
+        exchange=Exchange()
+        exchange.user = request.user
+        exchange.api_key = request.POST['api_key']
+        exchange.api_secret = request.POST['api_secret']
+        exchange.api_passphrase = request.POST['api_passphrase']
+        exchange.status = request.POST['status']
+        exchange.name = request.POST['name']
+        exchange.save()
+        return render(request, 'crm/home/crm_item_edit.html', {'profile':profile, 'exchange':exchange})
+
+    context = {'profile':profile}
+    return render(request, 'dashboard/addExchange.html', context)
+
+
+
+
+
+
+
+
+
 #------------------------------------------------------------------------------
 def client(request):
     #https://python-kucoin.readthedocs.io/en/latest/
