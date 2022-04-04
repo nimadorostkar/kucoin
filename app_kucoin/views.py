@@ -30,8 +30,9 @@ def dashboard(request):
 
 #------------------------------------------------------------------------------
 def exchangeItem(request, id):
+    profile = get_object_or_404(Profile, user=request.user)
     exchange = get_object_or_404(Exchange, id=id)
-    context = {'exchange':exchange}
+    context = {'exchange':exchange, 'profile':profile}
     return render(request, 'dashboard/exItem.html', context)
 
 
