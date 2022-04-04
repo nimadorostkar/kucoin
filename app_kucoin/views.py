@@ -51,7 +51,7 @@ def addExchange(request):
         exchange.status = request.POST['status']
         exchange.name = request.POST['name']
         exchange.save()
-        return render(request, 'crm/home/crm_item_edit.html', {'profile':profile, 'exchange':exchange})
+        return render(request, 'dashboard/addExchange.html', {'profile':profile, 'exchange':exchange})
 
     context = {'profile':profile}
     return render(request, 'dashboard/addExchange.html', context)
