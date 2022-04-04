@@ -120,6 +120,87 @@
 
 
 
+
+
+
+
+  <div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+      <h4 class="fw-bold py-3 mb-4" dir="rtl">
+        <span class="text-muted fw-light"> صرافی /</span> {{ exchange.name }}
+      </h4>
+
+      <div class="row">
+        <!-- Vertical Scrollbar -->
+        <div class="col-md-6 col-sm-12">
+          <div class="card overflow-hidden mb-4" style="height: 300px">
+            <h5 class="card-header" dir="rtl"> ارزها <small>(currencies)</small> </h5>
+            <div class="card-body" id="vertical-example">
+              <p>
+                {% for C in currencies %}
+                 {{ C.currency }} - {{ C.fullName }} - {{ C.precision }} - {{ C.confirms }} - {{ C.withdrawalMinSize }} - {{ C.withdrawalMinFee }} - {{ C.isWithdrawEnabled }} <br>
+                {% endfor %}
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ Vertical Scrollbar -->
+
+        <!-- vertical-depth Scrollbar -->
+        <div class="col-md-6 col-sm-12">
+          <div class="card overflow-hidden mb-4" style="height: 300px">
+            <h5 class="card-header" dir="rtl"> عمق بازار <small>(depth) - <i>KCS-BTC</i> </small> </h5>
+            <div class="card-body" id="vertical-depth">
+              <p>
+                {{depth}}
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ vertical-depth Scrollbar -->
+
+        <!-- klines Scrollbar -->
+        <div class="col-md-6 col-sm-12">
+          <div class="card overflow-hidden mb-4" style="height: 300px">
+            <h5 class="card-header" dir="rtl"> symbol klines <small>- <i>KCS-BTC</i> </small> </h5>
+            <div class="card-body" id="vertical-klines">
+              <p>
+                 {{ klines }} <br>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ klines Scrollbar -->
+
+        <!-- klines Scrollbar -->
+        <div class="col-md-6 col-sm-12">
+          <div class="card overflow-hidden mb-4" style="height: 300px">
+            <h5 class="card-header" dir="rtl"> لیست بازارها <small> (list of markets) </small> </h5>
+            <div class="card-body" id="vertical-markets">
+              <p>
+                 {{ markets }} <br>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ klines Scrollbar -->
+
+
+      </div>
+    </div>
+    <!-- / Content -->
+
+    <div class="content-backdrop fade"></div>
+  </div>
+
+
+
+
+
+
+
             <!-- Content wrapper -->
             <div class="content-wrapper">
               <!-- Content -->
@@ -250,6 +331,7 @@
     <!-- Main JS -->
     <script src="{% static 'dashboard/js/main.js' %}"></script>
     <!-- Page JS -->
+    <script src="{% static 'dashboard/js/extended-ui-perfect-scrollbar.js' %}"></script>
     <script src="{% static 'dashboard/js/dashboards-analytics.js' %}"></script>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
