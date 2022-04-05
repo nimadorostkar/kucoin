@@ -30,6 +30,9 @@ def dashboard(request):
 
 #------------------------------------------------------------------------------
 def exchangeItem(request, id):
+    # https://readthedocs.org/projects/python-kucoin/downloads/pdf/stable/   <- Good Documentation
+    # https://github.com/sammchardy/python-kucoin/blob/develop/kucoin/client.py
+    # https://hive.blog/hive-169321/@dkmathstats/crypto-data-from-kucoin-in-python
     profile = get_object_or_404(Profile, user=request.user)
     exchange = get_object_or_404(Exchange, id=id)
 
@@ -55,6 +58,9 @@ def exchangeItem(request, id):
     # get list of active orders
     #orders = client.get_active_orders('KCS-BTC')
 
+    aa = client.get_currency('BTC')
+
+
     context = {'exchange':exchange,
         'profile':profile,
         'client':client,
@@ -63,9 +69,9 @@ def exchangeItem(request, id):
         'klines':klines,
         'markets':markets,
         #'order':order,
-        #'orders':orders
-    }
-
+        #'orders':orders,
+        'aa':aa
+        }
     return render(request, 'dashboard/exItem.html', context)
 
 
