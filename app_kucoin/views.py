@@ -10,6 +10,7 @@ from app_kucoin.models import Exchange
 
 
 
+
 #------------------------------------------------------------------------------
 def index(request):
     return render(request, 'index.html')
@@ -103,9 +104,10 @@ def addExchange(request):
 
 
 
+
+
 #------------------------------------------------------------------------------
 def client(request):
-
 
     #https://python-kucoin.readthedocs.io/en/latest/
     api_key = '62402a681634ba000102877f'
