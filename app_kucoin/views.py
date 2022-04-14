@@ -7,12 +7,6 @@ from kucoin.client import Client
 from app_authentication.models import Profile
 from app_kucoin.models import Exchange
 
-import pandas as pd
-
-import json
-import os
-import threading
-
 import ccxt
 
 
@@ -82,36 +76,10 @@ def exchangeItem(request, id):
     #account = client.create_account('trade', 'BTC')
     #get_account = client.get_account('6257f0570b9df500013d54c5')
 
-    '''
-    ########### Currency Update Function #############
-    #Timer Setup
-    def printit():
-        threading.Timer(1.0, printit).start()
-        pull = client.get_tick()
-        coinType = pull[1]['coinType']   #Gets Coin Type(Name)
-        buyPrice = pull[1]['buy']        #Gets Buy Price
-        sellPrice = pull[1]['sell']      #Sell Price
-        changerate = pull[1]['changeRate'] #Change Rate
-        change = pull[1]['change']       #Change Price
-        high = pull[1]['high']           #Change Daily High
-        low = pull[1]['low']             #Change Daily Low
-
-        os.system('cls')
-        print('Coin: {0}'.format(coinType))
-        print('Bitcoin BUYPRICE:  ${0}'.format(buyPrice))
-        print('Bitcoin SELLPRICE: ${0}'.format(sellPrice))
-        print('Changerate:        ${0}'.format(changerate))
-        print('Daily Change:      ${0}'.format(change))
-        print('High:              ${0}'.format(high))
-        print('Low:               ${0}'.format(low))
-
-    printit()
-    '''
-
 
     print('-----------------------------------------------------')
     # DEFINE YOUR EXCHANGE AND TICKERS:
-    my_exchange = 'Binance' # example of crypto exchange
+    my_exchange = 'Kucoin' # example of crypto exchange
     ticker1 = 'BTC' # first ticker of the crypto pair
     ticker2 = 'USDT' # second ticker of the crypto pair
     method_to_call = getattr(ccxt,my_exchange.lower()) # retrieving the # method from ccxt whose name matches the given exchange name
@@ -119,13 +87,8 @@ def exchangeItem(request, id):
     pair_price_data = exchange_obj.fetch_ticker(ticker1+'/'+ticker2)
     closing_price = pair_price_data['close']
     print(pair_price_data)
-
-
-
-
-
-
-
+    print('-----')
+    print(closing_price)
 
 
 
@@ -231,6 +194,12 @@ def client(request):
     return render(request, 'client.html', context)
 
 
+
+
+
+#------------------------------------------------------------------------------
+def currencies(request):
+    return render(request, 'currencies.html')
 
 
 

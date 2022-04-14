@@ -6,6 +6,7 @@ from app_kucoin import views
 urlpatterns = [
     path('', views.index, name='home'),
     path('client', views.client, name='client'),
+    path('currencies', views.currencies, name='currencies'),
     path('dashboard', views.dashboard, name='dashboard'),
     path('exchange/<int:id>/',views.exchangeItem,name='exchange'),
     path('addExchange', views.addExchange, name='addExchange'),
