@@ -77,22 +77,6 @@ def exchangeItem(request, id):
     #get_account = client.get_account('6257f0570b9df500013d54c5')
 
 
-    print('-----------------------------------------------------')
-    # DEFINE YOUR EXCHANGE AND TICKERS:
-    my_exchange = 'Kucoin' # example of crypto exchange
-    ticker1 = 'BTC' # first ticker of the crypto pair
-    ticker2 = 'USDT' # second ticker of the crypto pair
-    method_to_call = getattr(ccxt,my_exchange.lower()) # retrieving the # method from ccxt whose name matches the given exchange name
-    exchange_obj = method_to_call() # defining an exchange object
-    pair_price_data = exchange_obj.fetch_ticker(ticker1+'/'+ticker2)
-    closing_price = pair_price_data['close']
-    print(pair_price_data)
-    print('-----')
-    print(closing_price)
-
-
-
-
 
     context = {'exchange':exchange,
         'profile':profile,
@@ -199,7 +183,17 @@ def client(request):
 
 #------------------------------------------------------------------------------
 def currencies(request):
-    return render(request, 'currencies.html')
+    # DEFINE YOUR EXCHANGE AND TICKERS:
+    my_exchange = 'Kucoin' # example of crypto exchange
+    ticker1 = 'BTC' # first ticker of the crypto pair
+    ticker2 = 'USDT' # second ticker of the crypto pair
+    method_to_call = getattr(ccxt,my_exchange.lower()) # retrieving the # method from ccxt whose name matches the given exchange name
+    exchange_obj = method_to_call() # defining an exchange object
+    pair_price_data = exchange_obj.fetch_ticker(ticker1+'/'+ticker2)
+    closing_price = pair_price_data['close']
+
+    context = { 'pair_price_data':pair_price_data, 'closing_price':closing_price}
+    return render(request, 'currencies.html', context)
 
 
 

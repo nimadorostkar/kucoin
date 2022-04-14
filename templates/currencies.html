@@ -1,1 +1,26 @@
-<h1> currencies </h1>
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <a href="{% url 'home' %}"> <small> back to home </small> </a>
+    <h1 align="center"> currencies </h1>
+    <br><br>
+
+    <h3> BTC / USDT </h3>
+    <p> {{pair_price_data}} </p>
+    <h4> closing price: {{closing_price}} </h4>
+
+
+
+
+
+  </body>
+</html>
